@@ -8,10 +8,9 @@ using namespace std;
 class Computer : public Player {
 
     public:
-        string name;
-        Computer();
         char makeMove();
-
+        string getName();
+        Computer();
 };
 
 #endif
