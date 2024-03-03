@@ -1,16 +1,15 @@
 #include "Player.h"
 #include <string>
-using namespace std;
 
 #ifndef COMPUTER_H
 #define COMPUTER_H
 
 class Computer : public Player {
-
+    std::string name;
     public:
-        char makeMove();
-        string getName();
         Computer();
+        char makeMove() override;
+        std::string getName() const override;
 };
 
 #endif
