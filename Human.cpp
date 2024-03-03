@@ -1,6 +1,7 @@
 #include "Human.h"
 #include <iostream>
 
+
 Human::Human() {
     this->name = "Human";
 }
@@ -19,8 +20,6 @@ char Human::makeMove() {
             isValidMove = true;
         } else {
             std::cout << "Invalid move. Please enter 'R', 'P', or 'S'." << std::endl;
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
     }
     return move;

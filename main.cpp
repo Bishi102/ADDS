@@ -3,6 +3,7 @@
 #include "Human.h"
 #include "Referee.h"
 
+#include <string>
 #include <iostream>
 
 int main() {

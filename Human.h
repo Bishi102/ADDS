@@ -1,4 +1,5 @@
 #include "Player.h"
+#include <string>
 
 #ifndef HUMAN_H
 #define HUMAN_H
