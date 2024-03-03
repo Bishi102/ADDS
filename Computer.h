@@ -5,7 +5,7 @@
 #define COMPUTER_H
 
 class Computer : public Player {
-    std::string name;
+    std::string name = "Computer";
     public:
         Computer();
         char makeMove() override;

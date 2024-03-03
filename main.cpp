@@ -4,7 +4,6 @@
 #include "Referee.h"
 
 #include <iostream>
-using namespace std;
 
 int main() {
 
@@ -16,10 +15,10 @@ int main() {
     Player* winner = referee.refGame(player, computer);
 
     if (winner == nullptr) {
-        cout << "It's a Tie" << endl;
+        std::cout << "It's a Tie" << std::endl;
     }
     else {
-        cout << winner->getName() << " Wins" << endl;
+        std::cout << winner->getName() << " Wins" << std::endl;
     }
     return 0;
 }
