@@ -1,3 +1,5 @@
+#include "Move.h"
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -6,9 +8,10 @@
 class Player {
     std::string name;
     public: 
-        virtual char makeMove() = 0;
-        virtual std::string getName() const = 0;
-        virtual ~Player() {};
+    virtual std::string getName() const = 0;
+    virtual Move* makeMove() = 0;
+
+    virtual ~Player() {};
 };
 
 #endif
