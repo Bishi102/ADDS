@@ -1,18 +1,18 @@
 #include <string>
 #include <vector>
 
-#ifndef MOVE_H
-#define MOVE_H
+#pragma once
 
-class Move {
-
-    virtual void addWinningMove() = 0;
+class Move 
+{
+    virtual void addWinningMove(const std::string& moveName) = 0;
 
     public:
-    virtual std::string getName() const = 0;
-    virtual const std::vector<std::string>& getWinningMoves() = 0;
+    virtual std::string const getName() = 0;
+    virtual std::vector<std::string> const getWinningMoves() = 0;
+    virtual void addWinningMove(const std::string move) = 0;
 
     virtual ~Move() {};
 };
 
-#endif
+
