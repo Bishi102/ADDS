@@ -7,3 +7,7 @@ Computer::Computer()
 std::string Computer::getName() const {
     return name;
 }
+Move* Computer::makeMove() 
+{
+    return new Rock();
+}
