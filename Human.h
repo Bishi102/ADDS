@@ -23,7 +23,7 @@ class Human : public Player
     Human();
     Human(const std::string name);
     std::string getName() const override;
-    Move* Human::makeMove() override;
+    Move* makeMove() override;
 };
 
 #endif
