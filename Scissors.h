@@ -6,12 +6,12 @@
 
 class Scissors : public Move {
     public:
-    Scissors::Scissors()
+    Scissors()
     {
         addWinningMove("Paper");
     }
     
-    std::string const Scissors::getName() override 
+    std::string const getName() override 
     {
         return "Scissors";
     }

@@ -7,13 +7,13 @@
 class Ninja : public Move
 {
     public:
-    Ninja::Ninja()
+    Ninja()
     {
         addWinningMove("Pirate");
         addWinningMove("Zombie");
     }
     
-    std::string const Ninja::getName() override 
+    std::string const getName() override 
     {
         return "Ninja";
     }

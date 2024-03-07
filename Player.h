@@ -7,10 +7,11 @@
 #include <string>
 
 class Player {
+    protected:
     std::string name;
     public: 
     virtual std::string getName() const = 0;
-    virtual Move* makeMove() = 0;
+    Move* makeMove();
 
     virtual ~Player() {};
 };

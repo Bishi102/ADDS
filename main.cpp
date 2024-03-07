@@ -2,7 +2,6 @@
 #include "Computer.h"
 #include "Human.h"
 #include "Referee.h"
-#include "MoveManager.h"
 #include "Move.h"
 #include "Paper.h"
 #include "Rock.h"
@@ -20,7 +19,7 @@
 
 int main() {
     Referee referee;
-    MoveManager moveManager;
+    
     Human* player = new Human;
     Human* player2 = new Human;
 

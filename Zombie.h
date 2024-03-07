@@ -6,13 +6,13 @@
 
 class Zombie : public Move {
     public:
-    Zombie::Zombie()
+    Zombie()
     {
         addWinningMove("Pirate");
         addWinningMove("Monkey");
     }
     
-    std::string const Zombie::getName() override 
+    std::string const getName() override 
     {
         return "Zombie";
     }

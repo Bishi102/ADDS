@@ -7,12 +7,12 @@
 class Paper : public Move
 {
     public:
-    Paper::Paper()
+    Paper()
     {
         addWinningMove("Rock");
     }
     
-    std::string const Paper::getName() override 
+    std::string const getName() override 
     {
         return "Paper";
     }

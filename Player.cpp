@@ -4,7 +4,6 @@
 #include "Computer.h"
 #include "Human.h"
 #include "Referee.h"
-#include "MoveManager.h"
 #include "Move.h"
 #include "Paper.h"
 #include "Rock.h"
@@ -21,11 +20,11 @@ std::string Player::getName() const
 }
 Move* Player::makeMove()
 {
-    Move* move = nullptr;
     std::string moveName;
     
     std::cout << "Enter move: "; 
     std::cin >> moveName;
+    
     if (moveName == "Rock")
     {
         return new Rock();
@@ -58,6 +57,8 @@ Move* Player::makeMove()
     {
         return new Zombie();
     }
-
-    
+    else 
+    {
+        return nullptr;
+    }
 }

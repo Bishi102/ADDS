@@ -7,12 +7,12 @@
 class Monkey : public Move
 {   
     public:
-    Monkey::Monkey() 
+    Monkey() 
     {
         addWinningMove("Ninja");
         addWinningMove("Robot");
     }
-    std::string const Monkey::getName() override
+    std::string const getName() override
     {
         return "Monkey";
     }

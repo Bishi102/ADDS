@@ -7,13 +7,13 @@
 class Pirate : public Move
 {
     public:
-    Pirate::Pirate()
+    Pirate()
     {
         addWinningMove("Robot");
         addWinningMove("Monkey");
     }
     
-    std::string const Pirate::getName() override 
+    std::string const getName() override 
     {
         return "Pirate";
     }

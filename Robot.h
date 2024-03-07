@@ -6,13 +6,13 @@
 
 class Robot : public Move {
     public:
-    Robot::Robot()
+    Robot()
     {
         addWinningMove("Ninja");
         addWinningMove("Zombie");
     }
     
-    std::string const Robot::getName() override 
+    std::string const getName() override 
     {
         return "Robot";
     }
