@@ -3,7 +3,7 @@
 Computer::Computer() {}
 
 char Computer::makeMove() {
-    return 'R';
+    return ;
 }
 
 std::string Computer::getName() const {

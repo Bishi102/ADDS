@@ -5,13 +5,14 @@
 
 class Move 
 {
-    virtual void addWinningMove(const std::string& moveName) = 0;
-
+    protected:
+    std::vector<std::string> winningMoves;
+    void addWinningMove(const std::string& moveName);
+    
     public:
+    std::vector<std::string> const getWinningMoves();
     virtual std::string const getName() = 0;
-    virtual std::vector<std::string> const getWinningMoves() = 0;
-    virtual void addWinningMove(const std::string move) = 0;
-
+ 
     virtual ~Move() {};
 };
 
