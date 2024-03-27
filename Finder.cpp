@@ -1,23 +1,20 @@
 #include "Finder.h"
 
-    using namespace std;
+using namespace std;
 
-    vector<int> Finder::findSubstrings(string s1, string s2) {
-
-        vector<int> result;
-
-        for(size_t i = 1; i <= s2.size(); i++) {
-            size_t found = 0;
-            s1.find(s2, found+1);
-            if (found != string::npos) {
-                result.push_back(found);
-            } else {
-                result.push_back(-1);
-            }
-        }
-        return result;
+vector<int> Finder::findSubstrings(string s1, string s2) {
+  vector<int> result;
+  for (size_t i = 1; i <= s2.size(); i++) {
+    size_t found = s1.find(s2.substr(0, i-1));
+    if (found != string::npos) {
+      result.push_back(found);
+    } else {
+      result.push_back(-1);
     }
+  }
+  return result;
+}
 
 // log of changes and time
 // original - 63s
-// changed s1.find(s2.substr(0, i)) to s1.find(s2, found+1) - 
+// changed s1.find(s2.substr(0, i)) to s1.find(s2, i-1) -
