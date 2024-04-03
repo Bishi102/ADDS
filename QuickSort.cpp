@@ -17,10 +17,12 @@ void QuickSort::sort(std::vector<int> &list, int start, int end)
     }
     // using 3rd element as pivot when size is at least 3
     int pivot;
-    if (end < 3) {
-        pivot = list.at(end);
+    if (end - start >= 2) {
+        // When the sublist has at least 3 elements, choose the third value
+        pivot = list.at(start + 2);
     } else {
-        pivot = list.at(2);
+        // Otherwise, choose the last element as the pivot
+        pivot = list.at(end);
     }
     int pivot_index = start;
     // sorting

@@ -18,6 +18,8 @@ int main() {
     QuickSort quickSort;
     std::vector<int> other  = {1, 3, 5, 4, -5, 100, 7777, 2014};
     other = quickSort.sort(other);
-
+    for (int i=0; i<other.size(); i++) {
+        std::cout << other[i] << " ";
+    }
     return 0;
 }
