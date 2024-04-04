@@ -15,11 +15,18 @@ int main() {
         std::cout << list[i] << " ";
     }
     std::cout << std::endl;
+    //
     QuickSort quickSort;
     std::vector<int> other  = {1, 3, 5, 4, -5, 100, 7777, 2014};
     other = quickSort.sort(other);
     for (int i=0; i<other.size(); i++) {
         std::cout << other[i] << " ";
     }
-    return 0;
+    std::cout << std::endl;
+    //
+    RecursiveBinarySearch binarySearch;
+    std::cout << binarySearch.search(list, 100) << std::endl;
+    std::cout << binarySearch.search(list, -5) << std::endl;
+    std::cout << binarySearch.search(other, -1) << std::endl;
+    std::cout << binarySearch.search(other, 7777) << std::endl;
 }
