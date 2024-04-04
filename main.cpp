@@ -4,29 +4,38 @@
 #include "RecursiveBinarySearch.h"
 
 #include <iostream>
+#include <sstream>
 
 // g++ -o main.out -std=c++11 -O2 -Wall *.cpp
 
-int main() {
-    std::vector<int> list {1, 3, 5, 4, -5, 100, 7777, 2014};
-    BubbleSort bubbleSort;
-    list = bubbleSort.sort(list);
-    for (int i=0; i<list.size(); i++) {
-        std::cout << list[i] << " ";
+int main()
+{
+    int num, i;
+    // get input and put into a vector
+    std::string input;
+    std::cout << "Enter a line of integers separated by space: ";
+    std::getline(std::cin, input);
+    std::istringstream iss(input);
+    std::vector<int> list;
+    while (iss >> num)
+    {
+        list.push_back(num);
     }
-    std::cout << std::endl;
-    //
+    // sort input list
     QuickSort quickSort;
-    std::vector<int> other  = {1, 3, 5, 4, -5, 100, 7777, 2014};
-    other = quickSort.sort(other);
-    for (int i=0; i<other.size(); i++) {
-        std::cout << other[i] << " ";
-    }
-    std::cout << std::endl;
-    //
+    list = quickSort.sort(list);
+    // search for 1 in sorted list and format output
     RecursiveBinarySearch binarySearch;
-    std::cout << binarySearch.search(list, 100) << std::endl;
-    std::cout << binarySearch.search(list, -5) << std::endl;
-    std::cout << binarySearch.search(other, -1) << std::endl;
-    std::cout << binarySearch.search(other, 7777) << std::endl;
+    if (binarySearch.search(list,1))
+    {
+        std::cout << "true ";
+    } else 
+    {
+        std::cout << "false ";
+    }
+    for (i=0; i<list.size(); i++)
+    {
+        std::cout << list.at(i) << " ";
+    }
+
 }
