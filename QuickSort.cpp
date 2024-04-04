@@ -2,20 +2,17 @@
 #include <algorithm>
 #include <iostream>
 
-std::vector<int> QuickSort::sort(std::vector<int> list)
-{
+std::vector<int> QuickSort::sort(std::vector<int> list) {
     sort(list, 0, list.size() - 1);
     return list;
 }
 
-void QuickSort::sort(std::vector<int> &list, int start, int end)
-{
-    // base case
-    if (start >= end)
-    {
+void QuickSort::sort(std::vector<int> &list, int start, int end) {
+    if (start >= end) {
         return;
     }
-    // using 3rd element as pivot when size is at least 3
+
+    // Choosing pivot
     int pivot;
     if (end - start >= 2) {
         // When the sublist has at least 3 elements, choose the third value
@@ -24,18 +21,23 @@ void QuickSort::sort(std::vector<int> &list, int start, int end)
         // Otherwise, choose the last element as the pivot
         pivot = list.at(end);
     }
-    int pivot_index = start;
-    // sorting
-    for (int i = start; i < end; i++)
-    {
-        if (list.at(i) < pivot)
-        {
-            std::swap(list[i], list[pivot_index]);
-            pivot_index++;
+
+    int left = start, right = end;
+    while (left <= right) {
+        while (list[left] < pivot) {
+            left++;
+        }
+        while (list[right] > pivot) {
+            right--;
+        }
+        if (left <= right) {
+            std::swap(list[left], list[right]);
+            left++;
+            right--;
         }
     }
-    std::swap(list[pivot_index], list[end]);
-    // recursive call for each half seperated by pivot
-    sort(list, start, pivot_index - 1);
-    sort(list, pivot_index + 1, end);
+    
+    sort(list, start, right);
+    sort(list, left, end);
 }
+
