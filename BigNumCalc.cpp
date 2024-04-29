@@ -1,11 +1,15 @@
 #include "BigNumCalc.h"
 
+BigNumCalc::BigNumCalc() {}
+
+BigNumCalc::~BigNumCalc() {}
+
 std::list<int> BigNumCalc::buildBigNum(std::string numString) {
-    std::list<int> bigNums;
-    for (char digit : numString) {
-        bigNums.push_back(digit - '0');
-    }
-    return bigNums;
+  std::list<int> bigNums;
+  for (char digit : numString) {
+    bigNums.push_back(digit - '0');
+  }
+  return bigNums;
 }
 
 std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2) {
