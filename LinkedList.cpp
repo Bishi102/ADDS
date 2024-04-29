@@ -34,7 +34,7 @@ Node* LinkedList::traverse(unsigned int index) {
 void LinkedList::insertPosition(int pos, int newNum) {
     // if adding first node or in front of current head
     Node* newNode = new Node(newNum);
-    if (pos <= 1) {
+    if (pos <= 1 || head == nullptr) {
         newNode->setLink(head);
         head = newNode;
         return;
