@@ -56,7 +56,7 @@ void LinkedList::insertPosition(int pos, int newNum) {
 }
 
 bool LinkedList::deletePosition(int pos) {
-    // if out of bounds or no head
+    // if no head
     if (pos < 1 || head == nullptr) {
         return false;
     }
@@ -69,6 +69,9 @@ bool LinkedList::deletePosition(int pos) {
     }
     // valid delete
     Node* current = traverse(pos-1);
+    if (current == nullptr || current->getLink() == nullptr) {
+        return false;
+    }
     Node* temp = current->getLink();
     current->setLink(temp->getLink());
     delete temp;
