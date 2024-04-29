@@ -75,7 +75,7 @@ int LinkedList::get(int pos) {
     if (head == nullptr || pos < 1) {
         return std::numeric_limits<int>::max();
     }
-    current = traverse(pos);
+    Node* current = traverse(pos);
     // out of bounds case
     if (current == nullptr) {
         return std::numeric_limits<int>::max();
