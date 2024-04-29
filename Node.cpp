@@ -1,8 +1,12 @@
 #include "Node.h"
 
-Node::Node(int num, Node* next) {
+Node::Node(int num) {
     data = num;
-    link = next;
+}
+
+Node::Node(int num, Node* next) {
+  data = num;
+  link = next;
 }
 
 int Node::getData() {

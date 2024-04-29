@@ -24,7 +24,7 @@ LinkedList::~LinkedList() {
 Node* LinkedList::traverse(unsigned int index) {
     unsigned int position = 0;
     Node* current = head;
-    while (current != nullptr && position < index) {
+    while (current != nullptr && position < index-1) {
         current = current->getLink();
         position++;
     }
@@ -33,8 +33,11 @@ Node* LinkedList::traverse(unsigned int index) {
 
 void LinkedList::insertPosition(int pos, int newNum) {
     // if adding first node or in front of current head
-    if (pos <= 1 || head == nullptr) {
-    head = new Node(newNum, head);
+    Node* newNode = new Node(newNum);
+    if (pos <= 1) {
+        newNode->setLink(head);
+        head = newNode;
+        return;
     } 
     // if inserting between two existing nodes
     Node *prevNode = traverse(pos-1);
@@ -43,10 +46,8 @@ void LinkedList::insertPosition(int pos, int newNum) {
     if (prevNode == nullptr) {
         return;
     }
-
-    Node *newNode = new Node(newNum, prevNode->getLink());
+    newNode->setLink(prevNode->getLink());
     prevNode->setLink(newNode);
-
 }
 
 bool LinkedList::deletePosition(int pos) {

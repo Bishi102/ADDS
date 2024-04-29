@@ -8,6 +8,7 @@ class Node {
 
     public:
     Node();
+    Node(int num);
     Node(int num, Node* next);
     int getData();
     Node* getLink();
