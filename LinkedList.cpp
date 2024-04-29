@@ -44,6 +44,11 @@ void LinkedList::insertPosition(int pos, int newNum) {
 
     // if inserting out of max bound
     if (prevNode == nullptr) {
+        Node* lastNode = head;
+        while (lastNode->getLink() != nullptr) {
+            lastNode = lastNode->getLink();
+        }
+        lastNode->setLink(newNode);
         return;
     }
     newNode->setLink(prevNode->getLink());
@@ -94,7 +99,6 @@ int LinkedList::search(int target) {
         index++;
     }
     return -1;
-
 }
 
 void LinkedList::printList() {
