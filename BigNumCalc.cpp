@@ -68,6 +68,10 @@ std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2) {
         carry = prod/10;
         num1.pop_back();
     }
+    while (carry > 0) {
+        result.push_front(carry % 10);
+        carry /= 10;
+    }
     while (result.front() == 0 && result.size() > 1) {
         result.pop_front();
     }
