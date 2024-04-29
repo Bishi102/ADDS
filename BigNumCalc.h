@@ -1,4 +1,5 @@
 #include <list>
+#include <string>
 
 #pragma once
 
