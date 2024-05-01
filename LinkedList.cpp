@@ -57,12 +57,12 @@ bool LinkedList::swap(int pos1, int pos2) {
 bool LinkedList::find_and_delete(int target) {
 	Node* currNode = head;
 	int counter = 0;
-	while(currNode->getData() != target) {
+	while(currNode != nullptr && currNode->getData() != target) {
+		if (currNode == nullptr) {
+		return false;
+	}
 		currNode = currNode->getLink();
 		counter++;
-	}
-	if (currNode == nullptr) {
-		return false;
 	}
 	Node* prev = traverse(counter-1);
 	prev->setLink(currNode->getLink());
