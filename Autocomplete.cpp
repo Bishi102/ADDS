@@ -1,4 +1,4 @@
-#include "autocomplete.h"
+#include "Autocomplete.h"
 
 void Autocomplete::insertWord(const std::string & word) {
     TrieNode* current = root;
