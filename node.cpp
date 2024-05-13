@@ -2,4 +2,5 @@
 
 TrieNode::TrieNode() {
     this->isEndOfWord = false;
+    this->routerNumber = -1;
 }
