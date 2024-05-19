@@ -3,8 +3,6 @@
 
 #include <vector>
 #include <cmath>  // for floor
-#include <queue>
-#include <functional> 
 
 template <typename T>
 class Heap {
@@ -24,7 +22,7 @@ class Heap {
   void insert(T);
   void remove(T);
   T getMin();
-  int kth_largest(vector<int> values, int k);
+  
 };
 
 /*******************************/
@@ -162,20 +160,6 @@ void Heap<T>::heapify(int parent_index) {
 
   // move up the 'tree' to grandparent
   heapify(floor(parent_index / 2) - 1);
-}
-
-int kth_largest(std::vector<int> values, int k) {
-    std::priority_queue<int, std::vector<int>, std::greater<int>> min_heap;
-
-    for (int value : values) {
-        if (min_heap.size() < k) {
-            min_heap.push(value);
-        } else if (value > min_heap.top()) {
-            min_heap.pop();
-            min_heap.push(value);
-        }
-    }
-    return min_heap.top();
 }
 
 #endif
