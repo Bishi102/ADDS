@@ -4,7 +4,7 @@
 #include <vector>
 #include <cmath>  // for floor
 #include <queue>
-#include <functional> // for std::greater
+#include <functional> 
 
 template <typename T>
 class Heap {
@@ -67,7 +67,7 @@ void Heap<T>::insert(T value) {
 
 template <typename T>
 void Heap<T>::bubbleUp(int index) {
-  if (index == 0) return;  // If it's the root, no need to bubble up
+  if (index == 0) return;  
   int parent_index = (index - 1) / 2;
   if (values[index] < values[parent_index]) {
     std::swap(values[index], values[parent_index]);
@@ -165,23 +165,16 @@ void Heap<T>::heapify(int parent_index) {
 }
 
 int kth_largest(std::vector<int> values, int k) {
-    // Define a min-heap using priority_queue
     std::priority_queue<int, std::vector<int>, std::greater<int>> min_heap;
 
-    // Iterate over the elements in the vector
     for (int value : values) {
         if (min_heap.size() < k) {
-            // If the heap has less than k elements, add the current element
             min_heap.push(value);
         } else if (value > min_heap.top()) {
-            // If the heap has k elements and the current element is larger than
-            // the smallest element in the heap, replace the smallest element
             min_heap.pop();
             min_heap.push(value);
         }
     }
-
-    // The root of the min-heap is the k-th largest element
     return min_heap.top();
 }
 
